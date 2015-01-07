@@ -1,0 +1,52 @@
+my @ascii =
+        (
+        'shapes/document' => <<'EOA',
+{d}
+EOA
+        'shapes/storage' => <<'EOA',
+{s}
+EOA
+    'shapes/input_output' => <<'EOA',
+{io}
+EOA
+        'colours/Red' => <<'EOA',
+cRED
+EOA
+        'colours/Blue' => <<'EOA',
+cBLU
+EOA
+        'colours/Pink' => <<'EOA',
+cPNK
+EOA
+        'colours/Black' => <<'EOA',
+cBLK
+EOA
+        'colours/Green' => <<'EOA',
+cGRE
+EOA
+        'colours/Yellow' => <<'EOA',
+cYEL
+EOA
+ 
+        ) ;
+ 
+my @boxes ;
+ 
+use App::Asciio::stripes::editable_box2 ;
+ 
+for(my $ascii_index = 0 ; $ascii_index < $#ascii ; $ascii_index+= 2)
+        {
+        my $box = new App::Asciio::stripes::editable_box2
+                                ({
+                                TEXT_ONLY => $ascii[$ascii_index + 1],
+                                EDITABLE => 1,
+                                RESIZABLE => 1,
+                                }) ;
+ 
+        $box->set_box_type([map{$_->[0] = 0; $_} @{$box->get_box_type()}]) ;
+        $box->shrink() ;
+        $box->{'NAME'} = $ascii[$ascii_index] ;
+        push @boxes, $box ;
+        }
+ 
+[@boxes] ;
