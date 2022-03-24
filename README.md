@@ -3,6 +3,12 @@
 - ditaa stencil
 - auto-generate .txt .png files
 
+## Ubuntu
+
+    sudo apt install asciio
+    
+    sudo apt install ditaa
+
 ## Installation log
 
 OS X, X11
