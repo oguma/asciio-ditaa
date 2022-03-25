@@ -5,9 +5,16 @@
 
 ## Ubuntu
 
-    sudo apt install asciio
-    
+    sudo apt install asciio    
     sudo apt install ditaa
+    sudo cp ~/Downloads/asciio-ditaa-master/App/Asciio/setup/stencils/ditaa /usr/share/perl5/App/Asciio/setup/stencils/
+    sudo cp ~/Downloads/asciio-ditaa-master/App/Asciio/setup/stencils/ditaatags /usr/share/perl5/App/Asciio/setup/stencils/
+    sudo cp /usr/share/perl5/App/Asciio/setup/setup.ini /usr/share/perl5/App/Asciio/setup/setup.ini.orig
+    sudo vi /usr/share/perl5/App/Asciio/setup/setup.ini
+    diff /usr/share/perl5/App/Asciio/setup/setup.ini.orig /usr/share/perl5/App/Asciio/setup/setup.ini
+    7a8,9
+    > 	'stencils/ditaa',
+    > 	'stencils/ditaatags',
 
 ## Installation log
 
