@@ -1,7 +1,7 @@
 # Asciio ditaa stencil
 
 - ditaa stencil
-- auto-generate .txt .png files
+- <s>auto-generate .txt .png files</s>
 
 ## Ubuntu
 
@@ -16,9 +16,7 @@
     > 	'stencils/ditaa',
     > 	'stencils/ditaatags',
 
-## Installation log
-
-OS X, X11
+## OS X, X11 Installation log
 
 ### asciio
 
